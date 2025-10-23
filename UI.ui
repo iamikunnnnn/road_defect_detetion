@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1203</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>智能检测系统</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* 顶层窗口：直接作为唯一容器 */
+#Form {
+    background-color: #f5f7fa;
+    padding: 20px; /* 固定像素留白，避免百分比计算问题 */
+}
+
+/* 预览区（scream）：左侧75%宽度，顶部80%高度 */
+#scream {
+    width: 75%;
+    height: 80%;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    font-size: 24px;
+    color: #888;
+    text-align: center;
+    line-height: 600px; /* 垂直居中（基于高度） */
+}
+
+/* 三个按钮：底部横向排列，用固定间距定位 */
+#btn_load, #btn_detect, #btn_get_results {
+    width: 23%; /* 每个按钮占左侧23% */
+    height: 10%;
+    margin-top: 20px; /* 与预览区间隔 */
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+}
+
+/* 上传按钮：最左侧 */
+#btn_load {
+    background-color: #4285f4;
+    margin-left: 0%;
+}
+#btn_load:hover { background-color: #3367d6; }
+
+/* 推理按钮：中间 */
+#btn_detect {
+    background-color: #34a853;
+    margin-left: 2%; /* 与左侧按钮间隔2% */
+}
+#btn_detect:hover { background-color: #2a8644; }
+
+/* 获取结果按钮：右侧 */
+#btn_get_results {
+    background-color: #fbbc05;
+    margin-left: 2%; /* 与中间按钮间隔2% */
+}
+#btn_get_results:hover { background-color: #e6a600; }
+
+/* 右侧输入框：固定在右侧 */
+#agent_text {
+    width: 20%;
+    height: 65%;
+    position: absolute; /* 绝对定位到右侧 */
+    right: 20px;
+    top: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* 发送按钮：输入框下方 */
+#send2agent {
+    width: 20%;
+    height: 12%;
+    position: absolute;
+    right: 20px;
+    top: 600px; /* 固定在输入框下方 */
+    background-color: #ea4335;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+}
+#send2agent:hover { background-color: #d93025; }
+
+
+
+
+</string>
+  </property>
+  <widget class="QLabel" name="scream">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>541</width>
+     <height>620</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>请上传图片/视频预览</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_load">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>660</y>
+     <width>161</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>上传图片/视频</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_detect">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>660</y>
+     <width>171</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>推理</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_get_results">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>660</y>
+     <width>161</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>获取检测结果</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="agent_text">
+   <property name="geometry">
+    <rect>
+     <x>930</x>
+     <y>20</y>
+     <width>250</width>
+     <height>550</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>agent将在此处显示分析内容</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="send2agent">
+   <property name="geometry">
+    <rect>
+     <x>930</x>
+     <y>600</y>
+     <width>250</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>AI分析(每日限量)</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="frame_choose">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>30</y>
+     <width>261</width>
+     <height>611</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>630</x>
+     <y>10</y>
+     <width>201</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>检测完毕后在此处显示结果</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
