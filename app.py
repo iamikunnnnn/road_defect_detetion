@@ -5,13 +5,14 @@ import pandas as pd
 from PyQt6 import uic
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QPushButton, QLabel,
                              QFileDialog, QMessageBox, QProgressDialog,QTableView)
+import torchvision
 from PyQt6.QtCore import QTimer, Qt
 from PyQt6.QtGui import QPixmap, QImage, QStandardItemModel, QStandardItem
 from view_frame_manager import FrameJumpManager
 import cv2
 import torch
 import numpy as np
-import pandas as pa
+
 from ultralytics import YOLO
 import os
 import sys
@@ -445,28 +446,6 @@ class myWindow(QMainWindow):
 
 
     def send2agent_slot(self):
-        print(r"""
-                          _ooOoo_
-                         o8888888o
-                         88" . "88
-                         (| -_- |)
-                         O\ = /O
-                      ____/`---'\____
-                    .' \\| |// `
-                   / \\||| : |||// \
-                  / _||||| -:- |||||- \
-                  | | \\\ - /// | |
-                  | \_| ''\---/'' | |
-                  \ .-\__ `-` ___/-. /
-                ___`. .' /--.--\ `. . __
-             ."" '< `.___\_<|>_/___.' >'""
-            | | : `- \`.;`\ _ /`;.`/ - ` : | |
-            \ \ `-. \_ __\ /__ _/ .-` / /
-        ======`-.____`-.___\_____/___.-`____.-'======
-                          `=---='
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-        """)
         agent_text = main()
         self.agent_text.setText(agent_text)  # 正确设置显示内容
 class SplashScreen(QMainWindow):

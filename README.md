@@ -12,7 +12,7 @@
 - 基于Gemini AI模型对检测结果进行专业分析，包括时间维度、帧序列模式、空间分布特征和类别间关系
 
 ## 安装要求
-- Python 3.x
+- Python 3.11
 - 相关依赖库：PyQt6、OpenCV、PyTorch、Pandas、Ultralytics、Google Generative AI
 
 ## 环境配置
